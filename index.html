@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1119">
+    <title>Gestor de Comercio - Software para tu negocio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0f1119;
+            color: #e8edf5;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 24px 80px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(91,141,239,0.12) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 100%, rgba(52,211,153,0.06) 0%, transparent 50%);
+        }
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        .hero .gradient-text {
+            background: linear-gradient(135deg, #5b8def, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #8b95a8;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #5b8def;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(91,141,239,0.3);
+        }
+        .btn-primary:hover {
+            background: #7ba7f5;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.06);
+            color: #e8edf5;
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-left: 12px;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .version-badge {
+            display: inline-block;
+            background: rgba(52,211,153,0.15);
+            color: #34d399;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .features {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 48px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.2s;
+        }
+        .feature-card:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.12);
+            transform: translateY(-2px);
+        }
+        .feature-card .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .feature-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #8b95a8;
+        }
+        .stack {
+            text-align: center;
+            padding: 60px 24px;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid rgba(255,255,255,0.04);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+        .stack-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+        .stack-tag {
+            background: rgba(91,141,239,0.1);
+            color: #7ba7f5;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+        .screenshots {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        .screenshot-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .screenshot-card .placeholder {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #59647a;
+            font-size: 14px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: #59647a;
+            font-size: 14px;
+        }
+        footer a {
+            color: #7ba7f5;
+            text-decoration: none;
+        }
+        @media (max-width: 640px) {
+            .btn-secondary { margin-left: 0; margin-top: 12px; }
+            .hero { padding: 60px 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <span class="version-badge">v1.0</span>
+        <h1>Gestioná tu negocio<br><span class="gradient-text">sin complicaciones</span></h1>
+        <p>Software de escritorio para inventario, ventas, cajas y usuarios. Diseñado para verdulerías, restaurantes, comercios y más.</p>
+        <div>
+            <a href="./demo/" class="btn btn-primary">&#127918; Probar demo online</a>
+            <a href="https://github.com/LMNoriega/gestor-de-comercio-web/releases" class="btn btn-secondary">&#128229; Descargar .exe</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">Todo lo que necesitás</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">&#128230;</div>
+                <h3>Inventario inteligente</h3>
+                <p>Creá, editá y eliminá productos. Por peso o por unidad. Alertas de stock bajo en tiempo real.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#128176;</div>
+                <h3>Ventas rápidas</h3>
+                <p>Grilla visual de productos, carrito flotante, pago combinado (efectivo + Mercado Pago). Ticket imprimible.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#128101;</div>
+                <h3>Roles y permisos</h3>
+                <p>Admin, empleado, cajero o personalizado. 10 permisos individuales tipo Discord. Cada usuario ve solo lo que necesita.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#127769;</div>
+                <h3>Modo oscuro y claro</h3>
+                <p>Toggle animado con sol/luna, estrellas titilantes y nubes. Guarda tu preferencia.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#128444;</div>
+                <h3>Iconos customizables</h3>
+                <p>Poné tus propios PNGs para productos, menú, carrito y avatares. Con fallback automático a emojis.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">&#128187;</div>
+                <h3>App de escritorio</h3>
+                <p>Funciona como .exe portable. Sin instalar nada. Backend ASP.NET Core + frontend web + Electron.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stack">
+        <h2 class="section-title">Hecho con</h2>
+        <div class="stack-tags">
+            <span class="stack-tag">C# .NET 8</span>
+            <span class="stack-tag">ASP.NET Core</span>
+            <span class="stack-tag">HTML5 + CSS3</span>
+            <span class="stack-tag">Vanilla JavaScript</span>
+            <span class="stack-tag">Electron</span>
+            <span class="stack-tag">JSON Persistence</span>
+            <span class="stack-tag">Glassmorphism</span>
+            <span class="stack-tag">REST API</span>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <h2 class="section-title" style="margin-bottom:40px">&#128247; Capturas</h2>
+        <div class="screenshot-card">
+            <img src="./screenshots/dashboard.png" alt="Dashboard" style="width:100%;border-radius:12px" loading="lazy">
+            <p style="color:#8b95a8;font-size:13px;margin-top:12px">Panel principal con resumen del día, alertas de stock y últimas ventas</p>
+        </div>
+        <div class="screenshot-card">
+            <img src="./screenshots/productos.png" alt="Inventario" style="width:100%;border-radius:12px" loading="lazy">
+            <p style="color:#8b95a8;font-size:13px;margin-top:12px">Gestión de inventario con búsqueda, productos por peso o unidad</p>
+        </div>
+        <div class="screenshot-card">
+            <img src="./screenshots/ventas.png" alt="Ventas" style="width:100%;border-radius:12px" loading="lazy">
+            <p style="color:#8b95a8;font-size:13px;margin-top:12px">Nueva venta con grilla visual, carrito flotante y pago combinado</p>
+        </div>
+        <div class="screenshot-card">
+            <img src="./screenshots/permisos.png" alt="Permisos" style="width:100%;border-radius:12px" loading="lazy">
+            <p style="color:#8b95a8;font-size:13px;margin-top:12px">Sistema de permisos granular con presets y artículos de ayuda</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Hecho con &#10084; por <a href="https://github.com/LMNoriega">LMNoriega</a> · <a href="https://github.com/LMNoriega/gestor-de-comercio-web">GitHub</a></p>
+        <p style="margin-top:8px;font-size:12px">Usalo gratis. Compartilo. Mejoralo.</p>
+    </footer>
+
+</body>
+</html>
